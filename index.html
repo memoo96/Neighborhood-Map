@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Restaurants In Egypt</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+		<div id="map" data-bind="click: toggleElement"></div>
+		<div id="places_title">
+			<h2>Restaurants In Egypt</h2>
+		</div>
+		<div data-bind="css: nav_status">
+			<input id="search" placeholder="Search for place" data-bind="textInput: Location_Input, event: {keyup: Filter_Places}">
+		    <div>
+				<ul id="list" data-bind="foreach: visible">
+					<li id="list_name" data-bind="text: name, click: $parent.showInfo"></li>
+				</ul>
+			</div>
+		</div>
+
+	<script src="js/knockout-3.5.0.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/myapp.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpXP0tpcDUFaBwcEcyLlHAIiKOSFHDaxw&callback=initMap" onerror="Error_map_handel()"></script>
+
+  </body>
+
+</html>
